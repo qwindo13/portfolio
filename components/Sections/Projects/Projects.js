@@ -39,9 +39,9 @@ export default function Projects() {
                     viewport={{ once: true }}
                 >
                     {projectData.map((project, index) => (
-                        <motion.div variants={listItem}>
+                        <motion.div variants={listItem} key={index}>
                             <ProjectItem
-                                key={index}
+                                
                                 id={project.id}
                                 mainVideo={project.mainVideo}
                                 thumbnail={project.thumbnail}

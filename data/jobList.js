@@ -15,7 +15,7 @@ const jobList = [
       company: "Escola Artística e Profissional Árvore",
       location: "Porto, Portugal",
       type: "Job",
-      description: "Responsible for managing and maintaining the school's technology infrastructure and resources and provided technical support and assistance to students and staff."
+      description: "Responsible for managing and maintaining the school&apos;s technology infrastructure and resources and provided technical support and assistance to students and staff."
     },
     {
       id: 2,

@@ -41,7 +41,7 @@ export default function Resume() {
 
                 <motion.div className="flex flex-col gap-5">
                     <p className="text-xl md:text-2xl leading-relaxed p-0">Frontend Developer and UI/UX Designer</p>
-                    <span className="text-xl md:text-2xl opacity-70 leading-relaxed	p-0">I'm someone who's always on the move and eager to tackle challenges, especially when it comes to problem-solving. My curiosity drives me to explore various techniques and platforms, constantly expanding my skillset. I'm a great fit for any team, bringing enthusiasm and fresh ideas to the table, yet I'm equally adept at shining in roles that require independent initiative and self-direction.</span>
+                    <span className="text-xl md:text-2xl opacity-70 leading-relaxed	p-0">I&apos;m someone who&apos;s always on the move and eager to tackle challenges, especially when it comes to problem-solving. My curiosity drives me to explore various techniques and platforms, constantly expanding my skillset. I&apos;m a great fit for any team, bringing enthusiasm and fresh ideas to the table, yet equally adept at shining in roles that require independent initiative and self-direction.</span>
                     <motion.div className="flex flex-row gap-10 pt-4">
                         <a href="https://www.linkedin.com/in/miguelantf/" className="invert" target="_blank" rel="noopener noreferrer"><img height="28" width="28" src="https://cdn.jsdelivr.net/npm/simple-icons@v8/icons/linkedin.svg" /></a>
                         <a href="https://github.com/miguel-antf" className="invert" target="_blank" rel="noopener noreferrer"><img height="28" width="28" src="https://cdn.jsdelivr.net/npm/simple-icons@v8/icons/github.svg" /></a>
