@@ -41,6 +41,7 @@ export default function Projects() {
                     {projectData.map((project, index) => (
                         <motion.div variants={listItem}>
                             <ProjectItem
+                                key={index}
                                 id={project.id}
                                 mainVideo={project.mainVideo}
                                 thumbnail={project.thumbnail}

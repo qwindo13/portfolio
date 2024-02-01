@@ -42,6 +42,7 @@ export default function Skills() {
                             initial="hidden"
                             whileInView="visible"
                             viewport={{ once: true }}
+                            key={index}
                         >
                             <h3 className="text-2xl">{category.title}</h3>
                             <motion.div className="skill-list flex flex-row flex-wrap" variants={listItem}>

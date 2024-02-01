@@ -28,13 +28,13 @@ export default function Hero() {
                     className="text-7xl md:text-9xl font-semibold"
                     variants={listItem}
                 >
-                    Hello, I'm <br></br>Miguel Ferreira.
+                    Hello, I&apos;m <br></br>Miguel Ferreira.
                 </motion.h2>
                 <motion.h2
                     className="text-3xl md:text-6xl font-semibold flex flex-col"
                     variants={listItem}
                 >
-                    <span className="">I'm a Frontend Developer </span>
+                    <span className="">I&apos;m a Frontend Developer </span>
                     <span className="type-skills opacity-50 text-2xl md:text-5xl ">&amp; skilled in </span>
                 </motion.h2>
             </motion.div>
