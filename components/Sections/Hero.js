@@ -2,7 +2,6 @@ import { useRef } from "react";
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { container, listItem } from "@/animations/animations";
-import BackgroundGradient from "../UI/BackgroundGradient/BackgroundGradient";
 
 
 export default function Hero() {

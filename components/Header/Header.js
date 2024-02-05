@@ -1,6 +1,7 @@
 import { useEffect, useState, useContext } from 'react';
 import { useScroll, motion } from 'framer-motion';
 import Link from 'next/link';
+import { LenisScroller } from '@/animations/smoothScroll';
 import { ModalContext } from '@/context/ModalContext';
 import Spline from '@splinetool/react-spline';
 import { HamburguerIcon } from './HamburguerIcon';
@@ -65,9 +66,9 @@ export default function Header() {
                 </motion.li>
               ) : (
                 <>
-                  <li className="opacity-50 hover:opacity-100 mr-2  transition-all duration-200"><Link href="#work">Work</Link></li>
-                  <li className="opacity-50 hover:opacity-100 mr-2  transition-all duration-200"><Link href="#skills">Skills</Link></li>
-                  <li className="opacity-50 hover:opacity-100 mr-2  transition-all duration-200 "><Link href="#about">About</Link></li>
+                  <li className="opacity-50 hover:opacity-100 mr-2  transition-all duration-200"><Link href="#work" onclick="lenis.scrollTo('#work')">Work</Link></li>
+                  <li className="opacity-50 hover:opacity-100 mr-2  transition-all duration-200"><Link href="#skills" onclick="lenis.scrollTo('#skills')">Skills</Link></li>
+                  <li className="opacity-50 hover:opacity-100 mr-2  transition-all duration-200 "><Link href="#about" onclick="lenis.scrollTo('#about')">About</Link></li>
                 </>
               )}
               <li><Link href="/resume"><Button transparent>Resume</Button></Link></li>

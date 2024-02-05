@@ -1,5 +1,4 @@
 import MainLayout from '@/layouts/MainLayout';
-import { ModalProvider } from '@/context/ModalContext';
 import Hero from "@/components/Sections/Hero"
 import Projects from "@/components/Sections/Projects/Projects"
 import Skills from "@/components/Sections/Skills"
@@ -17,7 +16,6 @@ export default function Home() {
       <Projects />
       <Skills />
       <About />
-      <div className="fixed fill w-1/1 h-1/1  user-select-none pointer-events-none"><canvas id="webgl" data-engine="three.js r147" width="1920" height="945" ></canvas></div>
     </MainLayout>
   )
 }

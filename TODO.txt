@@ -1,0 +1,9 @@
+- Adicionar background a secção hero
+- Adicionar metatags
+- Tirar fotografia TV para Tela
+- Gravar video dashboard
+- Resolver problema run build
+- Arranjar dominio
+- Adicionar CV pdf
+- Adicionar SmoothScroll
+- (NOT PRIORITY) Formulario Contacto
