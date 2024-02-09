@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect, useContext } from 'react';
+import React, { useRef, useEffect, useContext } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { container, listItem } from "@/animations/animations";
@@ -16,7 +16,7 @@ export default function ProjectItem(props) {
     };
 
     useEffect(() => {
-        
+
         const handleKeyDown = (event) => {
             if (event.key === 'Escape') {
                 setExpandedProjectId(null);
@@ -56,12 +56,13 @@ export default function ProjectItem(props) {
         <motion.div>
 
             <motion.div
-                className={`flex flex-col gap-5 bg-white bg-opacity-10 rounded-2xl transition-colors duration-500 w-full aspect-[4/3] cursor-pointer overflow-hidden ${isExpanded ? "fixed inset-0 w-screen !bg-black h-screen z-10  !overflow-y-scroll aspect-auto cursor-auto " : ""}`}
+                 data-lenis-prevent={isExpanded ? "true" : undefined}
+                className={`flex flex-col gap-5 bg-white bg-opacity-10 rounded-2xl transition-colors duration-500 w-full aspect-[4/3] cursor-pointer overflow-hidden ${isExpanded ? "fixed inset-0 w-screen !bg-black h-screen z-10  !overflow-y-scroll aspect-auto cursor-auto rounded-none" : ""}`}
                 style={{ backgroundColor: `${props.bgColor}` }}
                 transition={{
                     duration: 0.5,
                     layout: { duration: 0.5, type: "tween", ease: [0.76, 0, 0.24, 1] } // Spring animation for layout
-                    
+
                 }}
                 layout
                 onClick={toggleExpand} // Toggle expansion on click
@@ -84,12 +85,12 @@ export default function ProjectItem(props) {
 
                     {/* TITLE & DESC */}
                     {isExpanded && (
-                        <motion.section 
-                        initial="hidden"
-                        whileInView="visible"
-                        variants={container}
-                        viewport={{ once: true }}
-                        className="py-[100px] pt-[200px]"
+                        <motion.section
+                            initial="hidden"
+                            whileInView="visible"
+                            variants={container}
+                            viewport={{ once: true }}
+                            className="py-[100px] pt-[200px]"
                         >
                             <motion.div className="w-full">
                                 <motion.h2 className="text-5xl md:text-8xl">{props.title}</motion.h2>
