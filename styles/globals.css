@@ -3,18 +3,23 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --max-width: 1100px;
+  --border-radius: 12px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+::-moz-selection { /* Code for Firefox */
+  @apply bg-primary text-black;
 }
+
+::selection {
+  @apply bg-primary text-black;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow: visible;
+} 
 
 body {
   color: rgb(var(--foreground-rgb));
@@ -26,8 +31,105 @@ body {
     rgb(var(--background-start-rgb));
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+main{
+  @apply bg-black text-white h-full p-0 m-0 grid justify-center overflow-x-hidden;
+}
+
+h1, h2, h3, h4, h5, h6, p, span{
+  cursor: default;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+section{
+  place-content: flex-start;
+  align-items: flex-start;
+  flex: 0 0 auto;
+  height: min-content;
+  overflow: visible;
+  position: relative;
+  width: 100%;
+  max-width: 1440px;
+  @apply py-[50px] px-[20px] lg:px-[40px] xl:p-[100px] flex gap-10 lg:gap-16 flex-col md:flex-row;  
+}
+.main-container{
+  @apply  flex relative min-h-full	gap-10 lg:gap-16 overflow-auto md:overflow-visible	p-0 flex-nowrap flex-row place-content-center	w-auto;
+  place-content: center flex-start;
+  align-items: center;
+  display: flex;
+  flex-flow: column nowrap;
+  height: min-content;
+  padding: 0px;
+  position: relative;
+}
+
+.skill-list p{
+  @apply text-xl opacity-70;
+}
+.skill-list p:not(:first-child):before, .bullet:before{
+  content: "•"; 
+  margin: 0 5px 0 5px;
+}
+
+.grid-rows-auto{
+  grid-template-rows: auto;
+}
+
+.after\:inset-0::after{
+  display: none;
+}
+
+.translate-50 {
+  transform: translate(-50%);
+}
+
+#project-card:hover img {
+  transform: translateY(-1rem);
+}
+
+.type-skills::after {
+  border-right: 10px solid #f5d042;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
   }
+}
+
+
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+.mask {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  mask-image: url('/assets/images/mask.svg'); /* use a local or hosted SVG mask */
+  mask-repeat: no-repeat;
+  mask-size: 20px; /* Initial small size for mask */
+  background: #000; /* color shown through the mask */
+  pointer-events: none; /* Ignore pointer events */
+  mix-blend-mode: screen; /* Use blending to maintain background visibility */
 }
