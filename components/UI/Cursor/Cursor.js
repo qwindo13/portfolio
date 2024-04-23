@@ -6,15 +6,15 @@ function CustomCursor() {
   const x = useMotionValue(-100);
   const y = useMotionValue(-100);
   
-  const springConfig = { damping: 30, stiffness: 700 };
+  const springConfig = { damping: 25, stiffness: 700 };
   const springX = useSpring(x, springConfig);
   const springY = useSpring(y, springConfig);
 
   useEffect(() => {
     const handleMouseMove = (e) => {
       // Keep the cursor centered around the mouse point
-      x.set(e.clientX - (isExpanded ? 200 : 20));
-      y.set(e.clientY - (isExpanded ? 200 : 20));
+      x.set(e.clientX - (isExpanded ? 200 : 10));
+      y.set(e.clientY - (isExpanded ? 200 : 10));
     };
 
     const handleMouseOver = (e) => {
@@ -42,19 +42,18 @@ function CustomCursor() {
 
   return (
     <motion.div
+    className=""
       style={{ 
         position: "fixed", 
-        height: isExpanded ? 400 : 40, 
-        width: isExpanded ? 400 : 40, 
+        height: isExpanded ? 400 : 20, 
+        width: isExpanded ? 400 : 20, 
         background: "#F5D042",  
         borderRadius: "50%", 
         zIndex: 1000, 
         x: springX, 
         y: springY,
         pointerEvents: "none",
-        WebkitMaskImage: `url('/assets/images/mask.svg')`,
-        WebkitMaskRepeat: "no-repeat",
-        WebkitMaskSize: isExpanded ? "400px" : "40px",
+
         transition: "width 0.3s, height 0.3s, mix-blend-mode 0.3s, backgroundColor 0.3s",
         transformOrigin: "center",
         mixBlendMode: isExpanded ? "difference" : "none",  // Invert colors only when expanded

@@ -17,7 +17,7 @@ export default function Header() {
   const { expandedProjectId, setExpandedProjectId } = useContext(ModalContext);
 
   const closeModal = () => {
-    setExpandedProjectId(null); 
+    setExpandedProjectId(null);
   };
 
   const toggleMenu = () => {
@@ -47,7 +47,7 @@ export default function Header() {
     { title: "Skills", href: "#skills" },
     { title: "About", href: "#about" },
     { title: "Resume", href: "/resume" },
-    { title: "CV", href: "/cv" }, // Assuming /cv is the link for the CV
+    { title: "CV", href: "/assets/cv.pdf" }, // Assuming /cv is the link for the CV
   ];
 
   return (
@@ -58,30 +58,30 @@ export default function Header() {
           className={`h-auto justify-between ${isScrolling ? 'w-fit ' : 'w-full'} rounded-3xl m-4 md:m-8 flex flex-row gap-10 items-center ${isScrolling ? 'p-2 bg-white bg-opacity-10 backdrop-blur-xl drop-shadow-lg' : ''} border-white border-opacity-10`}
         >
           <motion.div onClick={closeModal} layout className={`transition-colors rounded-full ${isScrolling ? 'p-1 h-[50px] w-[50px] bg-[#F5D042] shadow-md' : 'h-[100px] w-[100px]'}`}>
-          <Spline 
-                scene="https://prod.spline.design/9-x30-rNb-0YOjhb/scene.splinecode" 
-                onLoad={() => setSplineLoaded(true)}
-              />
-              
+            <Link href="/"> <Spline
+              scene="https://prod.spline.design/9-x30-rNb-0YOjhb/scene.splinecode"
+              onLoad={() => setSplineLoaded(true)}
+            />
+            </Link>
             {!splineLoaded && (
               <Image src="/assets/images/avatar-loader.png" height={100} width={100} alt="loading" className={`absolute top-[33px] animate-pulse`} />
             )}
-            </motion.div>
+          </motion.div>
 
           <motion.ul layout className="hidden md:flex flex-row gap-2 items-center font-roboto-mono text-base ">
             {expandedProjectId != null ? (
-                <motion.li className="opacity-50 hover:opacity-100 mr-2 flex items-center transition-all duration-200 text-white">
-                  <motion.div onClick={closeModal} className='flex items-center gap-2 cursor-pointer'><img className='h-4' src="assets/icons/arrow-back-outline.svg" alt="Go Back" /> Go Back </motion.div>
-                </motion.li>
-              ) : (
-                <>
-                  <li className="opacity-50 hover:opacity-100 mr-2  transition-all duration-200"><Link href="#work" onclick="lenis.scrollTo('#work')">Work</Link></li>
-                  <li className="opacity-50 hover:opacity-100 mr-2  transition-all duration-200"><Link href="#skills" onclick="lenis.scrollTo('#skills')">Skills</Link></li>
-                  <li className="opacity-50 hover:opacity-100 mr-2  transition-all duration-200 "><Link href="#about" onclick="lenis.scrollTo('#about')">About</Link></li>
-                </>
-              )}
-              <li><Link href="/resume"><Button transparent>Resume</Button></Link></li>
-              <li><Button highlight>CV <img className='h-5 ml-2' src="assets/icons/cloud-download-outline.svg" alt="Download CV" /></Button></li>
+              <motion.li className="opacity-50 hover:opacity-100 mr-2 flex items-center transition-all duration-200 text-white">
+                <motion.div onClick={closeModal} className='flex items-center gap-2 cursor-pointer'><img className='h-4' src="assets/icons/arrow-back-outline.svg" alt="Go Back" /> Go Back </motion.div>
+              </motion.li>
+            ) : (
+              <>
+                <li className="opacity-50 hover:opacity-100 mr-2  transition-all duration-200"><Link href="/#work" onclick="lenis.scrollTo('/#work')">Work</Link></li>
+                <li className="opacity-50 hover:opacity-100 mr-2  transition-all duration-200"><Link href="/#skills" onclick="lenis.scrollTo('/#skills')">Skills</Link></li>
+                <li className="opacity-50 hover:opacity-100 mr-2  transition-all duration-200 "><Link href="/#about" onclick="lenis.scrollTo('/#about')">About</Link></li>
+              </>
+            )}
+            <li><Link href="/resume"><Button transparent>Resume</Button></Link></li>
+            <li><Link href="/assets/cv.pdf"><Button highlight>CV <img className='h-5 ml-2' src="assets/icons/cloud-download-outline.svg" alt="Download CV" /></Button></Link></li>
           </motion.ul>
           <HamburguerIcon onClick={toggleMenu} className='flex md:hidden' />
         </motion.nav>

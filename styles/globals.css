@@ -122,14 +122,3 @@ html.lenis {
   pointer-events: none;
 }
 
-.mask {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  mask-image: url('/assets/images/mask.svg'); /* use a local or hosted SVG mask */
-  mask-repeat: no-repeat;
-  mask-size: 20px; /* Initial small size for mask */
-  background: #000; /* color shown through the mask */
-  pointer-events: none; /* Ignore pointer events */
-  mix-blend-mode: screen; /* Use blending to maintain background visibility */
-}

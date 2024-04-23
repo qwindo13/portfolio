@@ -3,7 +3,6 @@ import { Inter } from 'next/font/google'
 import { ModalProvider } from '@/context/ModalContext';
 import { LenisScroller } from '@/animations/smoothScroll';
 
-
 export const inter = Inter({
   subsets: ['latin'],
   display: 'swap',

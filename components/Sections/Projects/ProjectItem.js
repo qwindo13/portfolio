@@ -3,7 +3,6 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { container, listItem } from "@/animations/animations";
 import { ModalContext } from '@/context/ModalContext';
-import Lenis from "@studio-freight/lenis";
 
 export default function ProjectItem(props) {
 
@@ -57,8 +56,7 @@ export default function ProjectItem(props) {
 
             <motion.div
                  data-lenis-prevent={isExpanded ? "true" : undefined}
-                className={`flex flex-col gap-5 bg-white bg-opacity-10 rounded-2xl transition-colors duration-500 w-full aspect-[4/3] cursor-pointer overflow-hidden ${isExpanded ? "fixed inset-0 w-screen !bg-black h-screen z-10  !overflow-y-scroll aspect-auto cursor-auto rounded-none" : ""}`}
-                style={{ backgroundColor: `${props.bgColor}` }}
+                className={`flex flex-col gap-5 bg-white bg-opacity-10 hover:bg-opacity-100 hover:bg-[#F5D042] rounded-2xl transition-colors duration-500 w-full aspect-[4/3] cursor-pointer overflow-hidden ${isExpanded ? "fixed inset-0 w-screen !bg-black h-screen z-10  !overflow-y-scroll aspect-auto cursor-auto rounded-none" : ""}`}
                 transition={{
                     duration: 0.5,
                     layout: { duration: 0.5, type: "tween", ease: [0.76, 0, 0.24, 1] } // Spring animation for layout
@@ -186,7 +184,7 @@ export default function ProjectItem(props) {
                                 </div>
                             </section >
                             {props.infoImage && (
-                            <section className='pt-0 md:p-0'>
+                            <section className='pt-0 md:px-'>
                                 <Image
                                     src={`/assets/images/projects/${props.infoImage}`}
                                     className='rounded-2xl w-full h-full object-cover'

@@ -5,15 +5,19 @@ export default function Skills() {
     const skillCategories = [
         {
             title: "Front-End Development",
-            skills: ["HTML5", "CSS3", "Javascript", "React", "Next.js", "Bootstrap", "Tailwind", "Git", "Jekyll"]
+            skills: ["HTML5", "CSS3", "Javascript", "React", "Next.js", "Bootstrap", "Tailwind", "Sass/SCSS", "Jekyll", "Responsive Design", "Performance Optimization"]
         },
         {
             title: "Content Management Systems (CMS)",
             skills: ["Wordpress", "Shopify", "Prestashop", "Joomla"]
         },
         {
+            title: "Project Management and Methodology",
+            skills: ["Agile Methodologies", "Git"]
+        },
+        {
             title: "Design",
-            skills: ["Figma", "Photoshop", "InDesign", "Lightroom", "Gimp"]
+            skills: ["UX/UI Design", "Figma", "Photoshop", "InDesign", "Lightroom", "Gimp"]
         },
         {
             title: "Other Skills",
